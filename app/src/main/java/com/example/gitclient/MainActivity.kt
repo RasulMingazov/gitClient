@@ -17,4 +17,5 @@ class MainActivity : AppCompatActivity() {
         val secondActivity = Intent(this, webActivity::class.java)
         startActivity(secondActivity)
     }
+
 }
