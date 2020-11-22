@@ -4,5 +4,9 @@ data class Repo(
     val branches: Int,
     val fork: String,
     val name: String,
-    val tags: Int
+    val tags: Int,
+    val watchers: Int,
+    val language: String,
+    val private: Boolean,
+    val owner: owner
 )

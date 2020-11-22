@@ -5,24 +5,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/mainGrey">
 
+
     <TextView
         android:id="@+id/reposText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="0dp"
+        android:text="@string/repositories"
         android:textSize="40sp"
-        android:textStyle="bold"
-        android:text="@string/repositories" />
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_toRightOf="@+id/reposText"
+        android:layout_toEndOf="@+id/reposText"
+        android:src="@drawable/plus"
+        android:onClick="addNewRepo"/>
+
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewRepos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/reposText"
-
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         tools:listitem="@layout/repo"
         android:orientation="horizontal"/>
 

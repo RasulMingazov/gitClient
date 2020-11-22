@@ -1,4 +1,4 @@
-package com.example.gitclient.model
+package com.example.gitclient.model.pojo
 
 import com.google.gson.annotations.SerializedName
 
