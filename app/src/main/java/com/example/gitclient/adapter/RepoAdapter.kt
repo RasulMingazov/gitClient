@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gitclient.R
 import com.example.gitclient.model.pojo.Repo
 
-class RepoAdapter(private val values: List<Repo>) :
+class RepoAdapter(private val values: List<Repo>, private val cellClickListener: CellClickListener) :
         RecyclerView.Adapter<RepoAdapter.MyViewHolder>() {
 
 
@@ -36,7 +36,9 @@ class RepoAdapter(private val values: List<Repo>) :
         } else {
             holder.isPrivate?.text = "Public"
         }
-
+        holder.deleteImage?.setOnClickListener() {
+            cellClickListener.onCellClickListener(repo)
+        }
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -48,4 +50,8 @@ class RepoAdapter(private val values: List<Repo>) :
         var isPrivate: TextView? = itemView.findViewById(R.id.isPrivate)
         var deleteImage: ImageView? = itemView.findViewById(R.id.deleteImage)
     }
+}
+
+interface CellClickListener {
+    fun onCellClickListener(repo: Repo)
 }

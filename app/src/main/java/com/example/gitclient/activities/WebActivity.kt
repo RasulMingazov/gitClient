@@ -15,12 +15,12 @@ import com.example.gitclient.viewmodel.factory.MainViewModelFactory
 import androidx.lifecycle.Observer
 import com.example.gitclient.R
 
-class webActivity: AppCompatActivity() {
+class WebActivity: AppCompatActivity() {
 
     lateinit var webView: WebView
 
-    val clientId = "f4c1bdac0b81ff49ad1b"
-    val clientSecret = "eb3cbb827d1d0792b75d8c09b026db784dbc22eb"
+    val clientId = ""
+    val clientSecret = ""
     val redirectUri = "githubcclient://callback"
     var code = ""
 
@@ -67,7 +67,7 @@ class webActivity: AppCompatActivity() {
         viewModel.getAccessToken(clientId, clientSecret, code)
         viewModel.authResponse.observe(this, Observer {responce ->
             if (responce.isSuccessful) {
-            startActivity(Intent(this@webActivity, repoActivity::class.java)
+            startActivity(Intent(this@WebActivity, RepoActivity::class.java)
                         .putExtra("code", responce.body()?.accessToken.toString()))
             }
             else {

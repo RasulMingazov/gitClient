@@ -17,6 +17,7 @@
         android:textStyle="bold" />
 
     <LinearLayout
+        android:id="@+id/linLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -31,15 +32,46 @@
             android:hint="@string/repository_name"
             android:textColorHint="@color/white"/>
 
-<!--        <EditText-->
-<!--            android:id="@+id/"-->
-<!--            android:layout_width="231dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:textColorLink="@color/white"-->
-<!--            android:hint="@string/repository_name"-->
-<!--            android:textColorHint="@color/white"/>-->
+        <EditText
+            android:id="@+id/descriptionText"
+            android:layout_width="231dp"
+            android:layout_height="match_parent"
+            android:textColorLink="@color/white"
+            android:layout_marginTop="40dp"
+            android:hint="@string/description"
+            android:textColorHint="@color/white"
+            android:inputType="textMultiLine"/>
 
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="60dp">
+
+            <RadioButton android:id="@+id/publicCh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/publicRB"
+                android:checked="true"/>
+
+            <RadioButton android:id="@+id/privateCh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/privateRB"/>
+        </RadioGroup>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/createRepoButton"
+        android:layout_below="@+id/linLayout"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:onClick="createNewRepo"
+        android:layout_marginTop="50dp"
+        android:text="@string/create" />
 
 </RelativeLayout>

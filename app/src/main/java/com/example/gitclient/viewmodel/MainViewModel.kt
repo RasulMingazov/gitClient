@@ -30,11 +30,18 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
         }
     }
 
-//    val newRepoResponse: MutableLiveData<Response<Repo>> = MutableLiveData()
-//    fun createRepo(accessToken: String, newRepo: NewRepo) {
-//        viewModelScope.launch {
-//            val response = repository.createRepo(accessToken, newRepo)
-//            newRepoResponse.value = response
-//        }
-//    }
+    val newRepoResponse: MutableLiveData<Response<Repo>> = MutableLiveData()
+    fun createRepo(accessToken: String, newRepo: NewRepo) {
+        viewModelScope.launch {
+            val response = repository.createRepo(accessToken, newRepo)
+            newRepoResponse.value = response
+        }
+    }
+    val deleteRepoResponse: MutableLiveData<Response<Void>> = MutableLiveData()
+    fun deleteRepo(accessToken: String, owner: String, repoName: String) {
+        viewModelScope.launch {
+            val response = repository.deleteRepo(accessToken, owner, repoName)
+            deleteRepoResponse.value = response
+        }
+    }
 }

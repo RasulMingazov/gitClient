@@ -19,8 +19,7 @@ interface GithubApi {
         @Header("Authorization") accessToken: String,
         @Path("owner") owner: String,
         @Path("repo") repoName: String
-    ) : Call<Response<Void>>
-
+    ) : Response<Void>
 
     @Headers("Accept: application/json")
     @FormUrlEncoded
@@ -33,9 +32,9 @@ interface GithubApi {
 
     @POST("/user/repos")
     @Headers("Accept: application/vnd.github.v3+json")
-    fun createRepo(
+    suspend fun createRepo(
             @Header("Authorization") accessToken: String,
             @Body repo: NewRepo
-    ): Call<Repo>
+    ): Response<Repo>
 }
 

@@ -16,7 +16,10 @@ class Repository {
                                code: String): Response<AccessToken> {
         return RetrofitBaseUrl.api.getAccessToken(clientId,clientSecret,code)
     }
-//    suspend fun createRepo(accessToken: String, newRepo: NewRepo): Response<Repo> {
-//        return RetrofitApiUrl.api.createRepo(accessToken, newRepo)
-//    }
+    suspend fun createRepo(accessToken: String, newRepo: NewRepo): Response<Repo> {
+        return RetrofitApiUrl.api.createRepo(accessToken, newRepo)
+    }
+    suspend fun deleteRepo(accessToken: String, owner: String, repoName: String): Response<Void> {
+        return RetrofitApiUrl.api.deleteRepo(accessToken, owner, repoName)
+    }
 }

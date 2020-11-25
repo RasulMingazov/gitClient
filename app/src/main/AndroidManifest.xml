@@ -22,10 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.webActivity" >
+        <activity android:name=".activities.WebActivity" >
 
         </activity>
-        <activity android:name=".activities.repoActivity" >
+        <activity android:name=".activities.RepoActivity" >
+
+        </activity>
+        <activity android:name=".activities.NewRepoActivity" >
 
         </activity>
     </application>

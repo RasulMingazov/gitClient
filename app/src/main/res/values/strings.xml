@@ -16,4 +16,8 @@
     <string name="name">Name</string>
     <string name="create_new_repository">Create new repository</string>
     <string name="repository_name">Repository name</string>
+    <string name="description">Description</string>
+    <string name="publicRB">Public</string>
+    <string name="privateRB">Private</string>
+    <string name="create">Create</string>
 </resources>
